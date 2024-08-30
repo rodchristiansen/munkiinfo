@@ -43,7 +43,7 @@ def pref_to_str(pref_value):
 def munki_prefs():
     """A full listing of all Munki preferences"""
     ''' https://github.com/munki/munki/wiki/Preferences '''
-    ''' Last updated for version 6.4 of Munki '''
+    ''' Last updated for version 6.4.2 of Munki '''
     our_prefs = [
         'AppleSoftwareUpdatesOnly',
         'AggressiveUpdateNotificationDays',
@@ -84,6 +84,7 @@ def munki_prefs():
         'LocalOnlyManifest',
         'FollowHTTPRedirects',
         'IgnoreSystemProxies',
+        'IgnoreMiddleware',
         'PerformAuthRestarts',
         'RecoveryKeyFile',
         'ShowOptionalInstallsForHigherOSVersions',

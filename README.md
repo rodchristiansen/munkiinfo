@@ -21,6 +21,7 @@ Munki Preference Keys
 * FollowHTTPRedirects
 * HelpURL
 * IconURL
+* IgnoreMiddleware
 * InstallAppleSoftwareUpdates
 * InstallRequiresLogout
 * LocalOnlyManifest
