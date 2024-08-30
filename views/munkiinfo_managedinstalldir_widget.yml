@@ -1,0 +1,9 @@
+type: scrollbox
+widget_id: munkiinfo-managedinstalldir-widget
+api_url: /module/munkiinfo/get_scroll_widget/ManagedInstallDir
+i18n_title: munkiinfo.managedinstalldir
+icon: fa-folder-open
+listing_link: /show/listing/munkiinfo/munkiinfo
+search_key: ManagedInstallDir
+badge: count
+i18n_empty_result: no_data

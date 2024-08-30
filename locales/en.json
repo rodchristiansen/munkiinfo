@@ -13,8 +13,12 @@
         "tooltip": "Munki protocol among all clients"
     },
     "protocol": "Protocol",
-    "reporttitle": "Munki Info",
+    "reporttitle": "Munki Info Report",
     "softwarerepourl": "Software Repo URL",
     "start": "Start",
-    "value": "Value"
+    "value": "Value",
+    "clientidentifier": "Munki ClientIdentifier",
+    "logfile": "Munki LogFile",
+    "managedinstalldir": "Munki ManagedInstallDir",
+    "softwarerepourl": "Munki SoftwareRepoURL"
 }

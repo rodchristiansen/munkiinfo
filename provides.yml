@@ -2,6 +2,18 @@ listings:
     munkiinfo:
         view: munkiinfo_listing
         i18n: munkiinfo.listing
+reports:
+    mosyle:
+        view: munkiinfo_report
+        i18n: munkiinfo.reporttitle
 widgets:
     munkiinfo_munkiprotocol:
         view: munkiinfo_munkiprotocol_widget
+    munkiinfo_softwarerepourl:
+        view: munkiinfo_softwarerepourl_widget
+    munkiinfo_clientidentifier:
+        view: munkiinfo_clientidentifier_widget
+    munkiinfo_logfile:
+        view: munkiinfo_logfile_widget
+    munkiinfo_managedinstalldir:
+        view: munkiinfo_managedinstalldir_widget

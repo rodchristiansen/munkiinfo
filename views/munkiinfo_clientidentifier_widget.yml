@@ -1,0 +1,9 @@
+type: scrollbox
+widget_id: munkiinfo-clientidentifier-widget
+api_url: /module/munkiinfo/get_scroll_widget/ClientIdentifier
+i18n_title: munkiinfo.clientidentifier
+icon: fa-person
+listing_link: /show/listing/munkiinfo/munkiinfo
+search_key: ClientIdentifier
+badge: count
+i18n_empty_result: no_data
