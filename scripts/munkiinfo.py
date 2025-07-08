@@ -7,7 +7,7 @@ import os
 import plistlib
 import sys
 import urllib.parse
-import importlib
+import re
 
 # pylint: disable=E0611
 from Foundation import CFPreferencesCopyAppValue
@@ -118,13 +118,17 @@ def middleware_checks():
     middleware_name = None
     for filename in os.listdir('/usr/local/munki'):
         if filename.startswith('middleware') and os.path.splitext(filename)[1] == '.py':
+
+            # Get the middleware version without running it, cuz that makes problems
+            f = open("/usr/local/munki/"+filename, "r")
+            for line in f:
+                if "__version__ = " in line:
+                    middleware_version = re.sub("__version__ = ",'', re.sub("'",'', line.strip()))
+                    f.close()
+                    break
             middleware_name = os.path.splitext(filename)[0]
-            try:
-                middleware = importlib.import_module(middleware_name)
-                middleware_version = middleware.__version__
-            except ImportError:
-                print("Error: munkiinfo.py - Error importing middleware for version checks.")
-            except AttributeError:
+
+            if middleware_version is None:
                 print("Error: munkiinfo.py - Error getting version attribute from middleware.")
 
     if middleware_name and middleware_version:
