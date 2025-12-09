@@ -1,6 +1,18 @@
 <?php
+/**
+ * Munkiinfo Model
+ * 
+ * Stores and processes Munki preference information from clients.
+ * Supports both plist and YAML data formats for future compatibility.
+ * 
+ * @package munkireport/munkiinfo
+ */
 
 use CFPropertyList\CFPropertyList;
+
+// Include the DataParser for YAML support
+require_once __DIR__ . '/lib/DataParser.php';
+use munkireport\munkiinfo\lib\DataParser;
 
 class munkiinfo_model extends \Model
 {
@@ -26,15 +38,20 @@ class munkiinfo_model extends \Model
    * @param string data
    * @author erikng
    **/
-    public function process($plist)
+    public function process($data)
     {
-        $parser = new CFPropertyList();
-        $parser->parse($plist);
-
-        $plist = $parser->toArray();
+        // Use DataParser to handle both plist and YAML formats
+        $parsedData = DataParser::parse($data);
+        
+        if (!$parsedData) {
+            return;
+        }
 
         $this->deleteWhere('serial_number=?', $this->serial_number);
-        $item = array_pop($plist);
+        $item = array_pop($parsedData);
+        if (!$item || !is_array($item)) {
+            return;
+        }
         reset($item);
         foreach($item as $key => $val) {
                 $this->munkiinfo_key = $key;
