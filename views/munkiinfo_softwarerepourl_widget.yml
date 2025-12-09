@@ -1,0 +1,9 @@
+type: scrollbox
+widget_id: munkiinfo-softwarerepourl-widget
+api_url: /module/munkiinfo/get_scroll_widget/SoftwareRepoURL
+i18n_title: munkiinfo.softwarerepourl
+icon: fa-file-archive-o
+listing_link: /show/listing/munkiinfo/munkiinfo
+search_key: SoftwareRepoURL
+badge: count
+i18n_empty_result: no_data

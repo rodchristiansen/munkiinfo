@@ -1,0 +1,9 @@
+type: scrollbox
+widget_id: munkiinfo-logfile-widget
+api_url: /module/munkiinfo/get_scroll_widget/LogFile
+i18n_title: munkiinfo.logfile
+icon: fa-tree
+listing_link: /show/listing/munkiinfo/munkiinfo
+search_key: LogFile
+badge: count
+i18n_empty_result: no_data

@@ -1,12 +1,11 @@
 <div class="col-lg-4 col-md-6">
-	<div class="panel panel-default" id="munkiinfo-munkiprotocol-widget">
-	  <div class="panel-heading" data-container="body" data-i18n="[title]munkiinfo.munkiprotocol.tooltip">
-	    <h3 class="panel-title"><i class="fa fa-magic"></i>
-	        <span data-i18n="munkiinfo.munkiprotocol.title"></span>
-	        <list-link data-url="/show/listing/munkireport/munki"></list-link>
-	    </h3>
+	<div class="card" id="munkiinfo-munkiprotocol-widget">
+	  <div class="card-header" data-container="body" data-i18n="[title]munkiinfo.munkiprotocol.tooltip">
+	    <i class="fa fa-magic"></i>
+        <span data-i18n="munkiinfo.munkiprotocol.title"></span>
+        <a href="/show/listing/munkireport/munki" class="pull-right"><i class="fa fa-list"></i></a>
 	  </div>
-	  <div class="panel-body text-center">
+	  <div class="card-body text-center">
         <a tag="http" class="btn btn-danger disabled">
             <span class="bigger-150"> 0 </span><br>
             <span data-i18n="munkiinfo.munkiprotocol.http"></span>
@@ -20,13 +19,13 @@
             <span data-i18n="munkiinfo.munkiprotocol.localrepo"></span>
         </a>
 	  </div>
-	</div><!-- /panel -->
+	</div><!-- /card -->
 </div><!-- /col -->
 
 <script>
 $(document).on('appReady', function(){
 
-	var panelBody = $('#munkiinfo-munkiprotocol-widget div.panel-body');
+	var panelBody = $('#munkiinfo-munkiprotocol-widget div.card-body');
 
 	// Tags
 	var tags = ['http', 'https', 'localrepo'];
