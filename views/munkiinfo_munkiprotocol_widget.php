@@ -3,7 +3,7 @@
 	  <div class="panel-heading" data-container="body" data-i18n="[title]munkiinfo.munkiprotocol.tooltip">
 	    <h3 class="panel-title"><i class="fa fa-magic"></i>
 	        <span data-i18n="munkiinfo.munkiprotocol.title"></span>
-	        <list-link data-url="/show/listing/munkireport/munki"></list-link>
+	        <list-link data-url="/show/listing/munkiinfo/munkiinfo"></list-link>
 	    </h3>
 	  </div>
 	  <div class="panel-body text-center">

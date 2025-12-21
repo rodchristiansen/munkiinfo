@@ -14,13 +14,13 @@ use CFPropertyList\CFPropertyList;
 require_once __DIR__ . '/lib/DataParser.php';
 use munkireport\munkiinfo\lib\DataParser;
 
-class munkiinfo_model extends \Model
+class Munkiinfo_model extends \Model
 {
 
     public function __construct($serial = '')
     {
           parent::__construct('id', 'munkiinfo'); //primary key, tablename
-          $this->rs['id'] = 0;
+          $this->rs['id'] = "";
           $this->rs['serial_number'] = $serial;
           $this->rs['munkiinfo_key'] = '';
           $this->rs['munkiinfo_value'] = '';
