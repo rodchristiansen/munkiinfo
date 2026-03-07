@@ -1,18 +1,6 @@
 <?php
-/**
- * Munkiinfo Model
- * 
- * Stores and processes Munki preference information from clients.
- * Supports both plist and YAML data formats for future compatibility.
- * 
- * @package munkireport/munkiinfo
- */
 
 use CFPropertyList\CFPropertyList;
-
-// Include the DataParser for YAML support
-require_once __DIR__ . '/lib/DataParser.php';
-use munkireport\munkiinfo\lib\DataParser;
 
 class Munkiinfo_model extends \Model
 {
@@ -39,9 +27,18 @@ class Munkiinfo_model extends \Model
    **/
     public function process($data)
     {
-        // Use DataParser to handle both plist and YAML formats
-        $parsedData = DataParser::parse($data);
-        
+        // Parse plist or YAML data
+        $trimmedData = ltrim($data);
+        if (strpos($trimmedData, '<?xml') === 0 ||
+            strpos($trimmedData, '<!DOCTYPE plist') !== false ||
+            strpos($trimmedData, '<plist') !== false) {
+            $parser = new CFPropertyList();
+            $parser->parse($data, CFPropertyList::FORMAT_XML);
+            $parsedData = $parser->toArray();
+        } else {
+            $parsedData = \Symfony\Component\Yaml\Yaml::parse($data);
+        }
+
         if (!$parsedData) {
             return;
         }
